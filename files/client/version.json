@@ -1,0 +1,10 @@
+{
+    "patches": [],
+    "base_hash": "ce70cd7f9b96f2f838d317604d4bccc82b40ec64",
+    "base_archive": "Talesofpirates.net-1.0.0.zip",
+    "base_checksum": "OaP2HIS77BMUBmuiJeYSgW/A4E+MbC3IOE8emDZ8qck=",
+    "client_exe": "system\\game.exe",
+    "client_args": [
+        "startgame"
+    ]
+}
