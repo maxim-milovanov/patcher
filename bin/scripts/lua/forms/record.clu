@@ -1,0 +1,73 @@
+
+fromRecordSystem = UI_CreateForm("fromRecordSystem", FALSE, 480, 350, 300, 100, TRUE, FALSE)
+UI_ShowForm(fromRecordSystem, TRUE)
+UI_AddFormToTemplete(fromRecordSystem, FORM_MAIN)
+UI_FormSetIsEscClose(fromRecordSystem, TRUE)
+UI_SetIsDrag(fromRecordSystem,TRUE)
+UI_SetFormStyle(fromRecordSystem,1)
+UI_FormSetHotKey(fromRecordSystem, ALT_KEY, HOTKEY_X)
+
+
+imgRecordBackground = UI_CreateCompent(fromRecordSystem, IMAGE_TYPE, "imgRecordBackground", 256, 256, 0, 0)
+UI_LoadImage(imgRecordBackground, "texture/ui/NUI/RecordSystem.png", NORMAL, 256,256, 0, 0)
+
+labRecordTitle = UI_CreateCompent(fromRecordSystem, LABELEX_TYPE, "labRecordTitle", 400, 150, 10, 3)
+UI_SetCaption(labRecordTitle, "Record System")
+UI_SetTextColor(labRecordTitle, COLOR_BLACK)
+UI_SetLabelExFont(labRecordTitle, DEFAULT_FONT, TRUE, COLOR_WHITE)
+
+lstRecordList = UI_CreateCompent(fromRecordSystem, LIST_TYPE, "lstRecordList", 170, 390, 19,42)
+
+lstRecordButton = UI_GetList(lstRecordList)
+UI_SetListRowHeight(lstRecordButton, 15)
+UI_SetListIsMouseFollow(lstRecordList, TRUE)
+
+	scrollid = UI_GetScroll(lstRecordButton)
+	UI_SetSize(scrollid, 11, 1)
+	UI_LoadImage(scrollid, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 1, 194, 13)
+	
+	id = UI_GetScrollObj(scrollid, SCROLL_UP)
+	UI_LoadButtonImage(id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE)
+	UI_SetSize(id, 11, 9)
+	
+	id = UI_GetScrollObj(scrollid, SCROLL_SCROLL)
+	UI_LoadImage(id, "texture/ui/PublicC.tga", COMPENT_BACK, 11, 33, 166, 10)
+	UI_SetSize(id, 11, 33)
+	
+	id = UI_GetScrollObj(scrollid, SCROLL_DOWN)
+	UI_LoadButtonImage(id, "texture/ui/PublicC.tga", 11, 9, 166, 0, TRUE)
+	UI_SetSize(id, 11, 9)
+
+
+local tabImage1 = {}
+local tabImage2 = {}
+local tabImage3 = {}
+local tabImage4 = {}
+for i = 1, 68, 1 do
+	tabImage1[i]  = UI_CreateCompent(fromRecordSystem, IMAGE_TYPE, "imgHelpShow"..i.."_1", 256, 256, 223, 43)
+	UI_LoadImage(tabImage1[i], "texture/ui/newshelp/"..i.."_1.tga", NORMAL, 256,256, 0, 0)
+	UI_SetIsShow(tabImage1[i],FALSE)
+
+	tabImage2[i]  = UI_CreateCompent(fromRecordSystem, IMAGE_TYPE, "imgHelpShow"..i.."_2",256, 132, 223, 299)
+	UI_LoadImage(tabImage2[i], "texture/ui/newshelp/"..i.."_2.tga", NORMAL, 256,132, 0, 0)
+	UI_SetIsShow(tabImage2[i],FALSE)
+
+	tabImage3[i]  = UI_CreateCompent(fromRecordSystem, IMAGE_TYPE, "imgHelpShow"..i.."_3", 104, 256, 479, 43)
+	UI_LoadImage(tabImage3[i], "texture/ui/newshelp/"..i.."_3.tga", NORMAL, 104,256, 0, 0)
+	UI_SetIsShow(tabImage3[i],FALSE)
+
+	tabImage4[i]  = UI_CreateCompent(fromRecordSystem, IMAGE_TYPE, "imgHelpShow"..i.."_4", 104, 132, 479, 299)
+	UI_LoadImage(tabImage4[i], "texture/ui/newshelp/"..i.."_3.tga", NORMAL, 104, 132, 104, 0)
+	UI_SetIsShow(tabImage4[i],FALSE)
+end
+
+btnClose = UI_CreateCompent(fromRecordSystem, BUTTON_TYPE, "btnClose", 14, 14, 585, 3)
+UI_LoadButtonImage(btnClose, "texture/ui/PublicC.tga", 14, 14, 116, 175, TRUE)
+UI_SetButtonModalResult(btnClose, BUTTON_CLOSE)
+
+UI_AddListText(lstRecordList,"Attribute")
+UI_AddListText(lstRecordList,"Classes")
+UI_AddListText(lstRecordList,"Swordsman")
+
+
+

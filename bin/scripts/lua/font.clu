@@ -1,0 +1,14 @@
+-- 创建字体,参数dwStyle为以下三种情况的聚合: 0x0001-粗体,0x0002-斜体,0x0004-带下划线,为0是正常体
+function UI_CreateFont( font, size800, size1024, dwStyle )		
+	return CLU_Call("UI_CreateFont", font, size800, size1024, dwStyle )
+end
+
+DEFAULT_FONT = UI_CreateFont( "Courier New", 12, 12, 0 )
+FONT14 = UI_CreateFont( "Courier New", 12, 12, 0 )
+FONT16 = UI_CreateFont( "Courier New", 14, 14, 1 )
+FONT18 = UI_CreateFont( "Courier New", 18, 18, 0 )
+FONT20 = UI_CreateFont( "Courier New", 18, 18, 1 )
+FONT28 = UI_CreateFont( "Courier New", 24, 24, 1 )
+BIGFONT = UI_CreateFont( "Courier New", 40, 40, 0 )
+ARIAL_FONT = UI_CreateFont( "Arial", 11, 11, 0 )
+MINI_FONT = UI_CreateFont( "Courier New", 10, 10, 0 )

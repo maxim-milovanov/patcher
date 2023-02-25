@@ -1,0 +1,31 @@
+C_NORMAL = 0 
+C_NEAR = 1 
+C_HIGHSPEED = 2 
+C_SHIP = 3
+
+	CLU_Call("CameraRangeXY", C_NORMAL, 75, 30)
+	CLU_Call("CameraRangeZ", C_NORMAL, 20, 60)
+	CLU_Call("CameraRangeFOV", C_NORMAL, 6, 30)
+	CLU_Call("CameraEnableRotate", C_NORMAL, 1)
+	CLU_Call("CameraShowSize1024", C_NORMAL, 60, 55)
+
+	CLU_Call("CameraRangeXY", C_NEAR, 28, 39.5)
+	CLU_Call("CameraRangeZ", C_NEAR, 10.5, 36)
+	CLU_Call("CameraRangeFOV", C_NEAR, 17, 20)
+	CLU_Call("CameraEnableRotate", C_NEAR, 0)
+	CLU_Call("CameraShowSize1024", C_NEAR, 34, 34)
+
+	CLU_Call("CameraRangeXY", C_HIGHSPEED, 40, 45)
+	CLU_Call("CameraRangeZ", C_HIGHSPEED, 25, 43)
+	CLU_Call("CameraRangeFOV", C_HIGHSPEED, 6, 26)
+	CLU_Call("CameraEnableRotate", C_HIGHSPEED, 0)
+	CLU_Call("CameraShowSize1024", C_HIGHSPEED, 42, 42)
+
+	CLU_Call("CameraRangeXY", C_SHIP, 75, 30)
+	CLU_Call("CameraRangeZ", C_SHIP, 20, 60)
+	CLU_Call("CameraRangeFOV", C_SHIP, 25, 30)
+	CLU_Call("CameraEnableRotate", C_SHIP, 1)
+	CLU_Call("CameraShowSize1024", C_SHIP, 60, 55)
+
+function LoadCameraConfig()
+end
